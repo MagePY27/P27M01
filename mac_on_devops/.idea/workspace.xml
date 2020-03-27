@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4d79f993-0c2b-49d7-8b8c-f26a2941c26f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Zef4UkqGf8rdhjPKbhYBq5f3PD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="mac_on_devops" type="Python.DjangoServer" factoryName="Django server">
+      <module name="mac_on_devops" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="mac_on_devops.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d79f993-0c2b-49d7-8b8c-f26a2941c26f" name="Default Changelist" comment="" />
+      <created>1585204289075</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585204289075</updated>
+      <workItem from="1585204291662" duration="5286000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1748" height="334" key="GridCell.Tab.0.bottom" timestamp="1585235773364">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state width="1748" height="334" key="GridCell.Tab.0.bottom/-79.-1057.1920.1057/0.23.1792.1051@0.23.1792.1051" timestamp="1585235773364" />
+    <state width="1748" height="334" key="GridCell.Tab.0.center" timestamp="1585235773363">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state width="1748" height="334" key="GridCell.Tab.0.center/-79.-1057.1920.1057/0.23.1792.1051@0.23.1792.1051" timestamp="1585235773363" />
+    <state width="1748" height="334" key="GridCell.Tab.0.left" timestamp="1585235773363">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state width="1748" height="334" key="GridCell.Tab.0.left/-79.-1057.1920.1057/0.23.1792.1051@0.23.1792.1051" timestamp="1585235773363" />
+    <state width="1748" height="334" key="GridCell.Tab.0.right" timestamp="1585235773363">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state width="1748" height="334" key="GridCell.Tab.0.right/-79.-1057.1920.1057/0.23.1792.1051@0.23.1792.1051" timestamp="1585235773363" />
+    <state x="397" y="193" key="SettingsEditor" timestamp="1585204764841">
+      <screen x="0" y="23" width="1792" height="1051" />
+    </state>
+    <state x="397" y="193" key="SettingsEditor/-79.-1057.1920.1057/0.23.1792.1051@0.23.1792.1051" timestamp="1585204764841" />
+  </component>
+</project>
