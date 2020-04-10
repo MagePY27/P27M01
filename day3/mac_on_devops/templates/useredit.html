@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+    <p style="background-color: aqua">用户修改</p>
+{% endblock %}
+
+{% block content %}
+    <form  method="post">
+        <input type="text" name="username" value="{{ res.username }}">
+        <input type="text" name="sex" value="{{ res.get_sex_display }}">
+        <input type="text" name="password" value="{{ res.password }}">
+        <input type="hidden" name="id" value="{{ res.id }}">
+        <input type="submit" value="提交">
+    </form>
+{% endblock %}

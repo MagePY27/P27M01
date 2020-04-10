@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+    <p style="background-color: aqua">用户的列表</p>
+{% endblock %}
+
+{% block content %}
+    <table border="1">
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>性别</th>
+        <th>密码</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in all_users %}
+        <tr>
+            <th>{{ user.username }}</th>
+            <th>{{ user.get_sex_display }}</th>
+            <th>{{ user.password }}</th>
+            <th><a href="/users/edit/?user_id={{ user.pk }}">编辑</a> <a href="/users/del/{{ user.pk }}">删除</a></th>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+    <a href="/users/add/"><button>添加</button></a>
+    <!--http://127.0.0.1:8000/users/add/-->
+      <!--  http://127.0.0.1:8000/usres/add/-->
+{% endblock %}

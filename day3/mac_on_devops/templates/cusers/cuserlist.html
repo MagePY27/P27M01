@@ -1,0 +1,31 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    <form method="post" action=".">
+        <input type="text" name="keyword" value="{{ keyword }}" placeholder="请输入关键字">
+        <!--<input type="submit" value="提交">-->
+        <button type="submit">搜索</button>
+    </form>
+    <button><a href="{% url 'cusers:cadd' %}">添加</a></button>
+    <br>
+    <table border="1">
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>性别</th>
+        <th>密码</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in all_users %}
+        <tr>
+        <th>{{ user.username }}</th>
+        <th>{{ user.sex }}</th>
+        <th>{{ user.password }}</th>
+        <th><a href="{% url 'cusers:cedit' user.id %}">编辑</a>  <a href="{% url 'cusers:cdel' user.id %}">删除</a></th>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
