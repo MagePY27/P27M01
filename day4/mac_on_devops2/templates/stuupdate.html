@@ -11,23 +11,36 @@
 {% block content %}
     <form method="post" action=".">
     用户名：
-    <input type="text" name="name" value="{{ stu.name }}" placeholder="请输入用户名">
+    <input type="text" name="name" value="{{ form.name.value }}" placeholder="请输入用户名">
     {% if form.name %}
         {{ form.name.errors.as_text }}
     {% endif %}
     <br>
     手机号:
-    <input type="text" name="phone" value="{{ stu.phone }}" placeholder="请输入手机号">
+    <input type="text" name="phone" value="{{ form.phone.value }}" placeholder="请输入手机号">
     {% if form.phone %}
         {{ form.phone.errors.as_text }}
     {% endif %}
     <br>
     密码：
-    <input type="password" name="password" value="{{ stu.password }}" placeholder="请输入密码">
+    <input type="password" name="password" value="{{ form.password.value }}" placeholder="请输入密码">
+    <br>
+    确认密码：
+    <input type="password" name="confirm_password" value="{{ form.password.value }}" placeholder="请输入密码">
     <br>
     性别：
-    <input type="radio" name="sex" value="0" checked>男
-    <input type="radio" name="sex" value="1">女
+    <input type="radio" name="sex" value="0" {% if form.sex.value == 0 %}checked{% endif %}>男
+    <input type="radio" name="sex" value="1" {% if form.sex.value == 1 %}checked{% endif %}>女
+{#    <input type="radio" name="sex" value="0" {% if stu.sex.value == 0 %}checked{% endif %}>男#}
+{#    <input type="radio" name="sex" value="1" {% if stu.sex.value == 1 %}checked{% endif %}>女#}
+{#    {% if form.sex.value == 0 %}#}
+{#        <input type="radio" name="sex" value="0" checked>男#}
+{#        <input type="radio" name="sex" value="1">女#}
+{#    {% endif %}#}
+{#    {% if form.sex.value == 1 %}#}
+{#        <input type="radio" name="sex" value="0">男#}
+{#        <input type="radio" name="sex" value="1" checked>女#}
+{#    {% endif %}#}
     <br>
     <button type="submit">提交</button>
 {#    <button type="submit" name="_continue">保存并继续编辑</button>#}

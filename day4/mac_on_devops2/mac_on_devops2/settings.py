@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'devopshk',
         'HOST': '127.0.0.1',
         'USER': 'root',
-        'PASSWORD': 'P@ssw0rd',
+        'PASSWORD': 'password',
         'PORT': 3306,
     }
 }

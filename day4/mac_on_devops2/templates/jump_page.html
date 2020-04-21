@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转页面</title>
+</head>
+<body>
+{% if msg.code == 0 %}
+    <p style="color: green">{{ msg.result }}</p>
+    <a href="{% url 'students:list' %}">返回列表页</a>
+{% endif %}
+{% if msg.code == 1 %}
+    <p style="color: red">{{ msg.err }}</p>
+    {{ studentForm.errors }}
+{% endif %}
+</body>
+</html>
