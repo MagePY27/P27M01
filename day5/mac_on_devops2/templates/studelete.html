@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>用户删除页面</title>
+{% endblock %}
+
+{% block content %}
+    <form method="post" action=".">
+    <p>确定要删除 {{ stu.name }}</p>
+    <button type="submit">提交</button>
+    {% csrf_token %}
+    </form>
+{% endblock %}

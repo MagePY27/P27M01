@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if code == 0 %}
+        <h1 style="color: green">{{ result }}</h1>
+    {% endif %}
+    {% if code == 1 %}
+        <h1 style="color: red">操作失败</h1>
+        <h1 style="color: red">{{ errmsg }}</h1>
+    {% endif %}
+{% endblock %}
+
+{% block js %}
+    <script>
+    let status = {{ code }};
+    let next_url = "{{ next_url|safe }}";  /*开始写成了let next_url = {{ next_url|safe }}; 导致页面无法自动跳转*/
+    let timejump = 1500;
+    $(function () {
+        if (status != 0){
+            timejump = 5000
+        }
+        setTimeout(function () {
+            window.location.href = next_url;
+        },timejump)
+    })
+    </script>
+{% endblock %}
