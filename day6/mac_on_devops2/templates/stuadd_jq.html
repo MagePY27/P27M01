@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    <title>用户添加页面</title>
+{% endblock %}
+
+{% block content %}
+    {% if res %}
+        <p>{{ res }}</p>
+    {% endif %}
+    <br>
+    <form method="post" action="." novalidate id="add_form">
+    用户名：
+    <input type="text" name="name" value="{{ object.name }}" placeholder="请输入用户名">
+{#    {% if form.name %}#}
+{#        {{ form.name.errors.as_text }}#}
+{#    {% endif %}#}
+    <br>
+    手机号:
+    <input type="text" name="phone" placeholder="请输入手机号">
+    {% if errmsg %}
+        <p>{{ errmsg.phone }}</p>
+    {% endif %}
+{#    {% if form.phone %}#}
+{#        {{ form.phone.errors.as_text }}#}
+{#    {% endif %}#}
+    <br>
+    密码：
+    <input type="password" name="password" placeholder="请输入密码">
+    <br>
+    确认密码：
+    <input type="password" name="confirm_password" placeholder="请输入密码">
+{#    {% if form.confirm_password %}#}
+{#        {{ form.confirm_password.errors.as_text }}#}
+{#    {% endif %}#}
+    <br>
+    性别：
+    <input type="radio" name="sex" value="0" checked>男
+    <input type="radio" name="sex" value="1">女
+    <br>
+    <input type="button" value="提交" id="addbtn">
+{#    <button type="submit" id="addbtn">提交</button>#}  <!--这个地方为什么不能使用button呢？-->
+    {% csrf_token %}
+    </form>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+$("#addbtn").click(function () {
+    data = $("#add_form").serialize();
+    console.log(data); /* 拿到form提交的数据给数据 */
+    $.ajax({
+        type: 'post',
+        url: '{% url 'students:jlist' %}',
+        data: data, /* 通过上面的type,url,data将表单中的数据提交到views中 */
+        success: function (result) {
+            console.log(result) /* views.py中返回JsonResponse对象，将这个对象打印出来 */
+            if (result.code == 0){
+                alert(result.msg)  /* 弹出模态框，显示JsonResponse对象中msg的内容 */
+                location.href = result.next_url
+            }
+            if (result.code == 1){
+                alert(result.errmsg)
+            }
+        }
+    })
+});
+</script>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>用户列表</title>
+{% endblock %}
+
+{% block content %}
+    <button><a href="{% url 'students:jadd' %}">添加用户</a></button>
+    <br>
+    <br>
+    <table border="1">
+    <thead>
+    <tr>
+        <td>用户名</td>
+        <td>手机号</td>
+        <td>性别</td>
+        <td>密码</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for stu in all_students %}
+        <tr>
+            <td>{{ stu.name }}</td>
+            <td>{{ stu.phone }}</td>
+            <td>
+                {% if stu.sex == 0 %}男{% endif %}
+                {% if stu.sex == 1 %}女{% endif %}
+            </td>
+            <td>{{ stu.password }}</td>
+            <td><a href="{% url 'students:jdetail' stu.id %}">更新</a>
+                <a type="button" class="delbtn" userid="{{ stu.id }}">删除</a></td>
+{#            <td><a href="{% url 'students:update' stu.id %}">更新</a> <a href="{% url 'students:delete' stu.id %}">删除</a></td>#}
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+$("tbody").on('click','.delbtn',function () {
+    let that = $(this);
+    console.log(that);
+    console.log(that.attr("userid"));
+    if(confirm("是否确认删除？")){
+        let uid = $(this).attr('userid')
+        $.ajax({
+            url: "{% url 'students:jlist' %}",
+            type: "DELETE",
+            data: {"id": uid},
+            success: function (res) {
+                console.log(res)
+                if (res.code == 0){
+                    alert('删除成功')
+                    setTimeout(function () {
+                        window.location.reload();
+                    },50);
+                }else {
+                    alert('操作失败')
+                }
+            }
+        })
+    }
+})
+</script>
+{% endblock %}

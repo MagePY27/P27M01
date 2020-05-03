@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+        <title></title>
+    {% endblock %}
+    <!-- 引入jQuery文件 -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+</head>
+<body>
+{% block content %}
+{% endblock %}
+
+<!-- jQuery模板块 -->
+{% block js %}
+{% endblock %}
+
+{% block footer %}
+    <p style="background-color: red">版权所有: Mr.Zhou</p>
+{% endblock %}
+</body>
+</html>
