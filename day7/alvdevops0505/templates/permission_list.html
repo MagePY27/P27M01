@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    权限列表
+{% endblock %}
+
+{% block css %}
+    <!-- Plugin Css-->
+        <link rel="stylesheet" href="{% static 'assets/magnific-popup/magnific-popup.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/jquery-datatables-editable/datatables.css' %}" />
+{% endblock %}
+
+{% block page-title %}
+    权限列表
+{% endblock %}
+{% block page-content %}
+            <div class="wraper container-fluid">
+
+                <div class="panel">
+
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+{#                                    <button id="addToTable" class="btn btn-primary waves-effect waves-light">添加 <i class="fa fa-plus"></i></button>#}
+                                    <a href="{% url 'users:add' %}">
+                                        <button class="btn btn-primary waves-effect waves-light">添加<i class="fa fa-plus"></i></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped" id="datatable-editable">
+                            <thead>
+                                <tr>
+                                    <th>权限名称</th>
+                                    <th>内容类型</th>
+                                    <th>CodeName</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for permission in object_list %}
+                                <tr class="gradeX">
+                                    <td>{{ permission.name }}</td>
+                                    <td>
+                                       {{ permission.content_type }}
+                                    </td>
+                                    <td>
+                                        {{ permission.codename }}
+                                    </td>
+                                    <td class="actions">
+                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>
+                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>
+                                        <a href="#" class="on-default"><i class="fa fa-pencil"></i></a>
+                                        <a href="#" class="on-default"><i class="fa fa-trash-o"></i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end: page -->
+
+                </div> <!-- end Panel -->
+
+
+            </div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/modernizr.min.js' %}"></script>
+
+    <script src="{% static 'assets/magnific-popup/magnific-popup.js' %}"></script>
+    <script src="{% static 'assets/jquery-datatables-editable/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'assets/datatables/dataTables.bootstrap.js' %}"></script>
+    <script src="{% static 'assets/jquery-datatables-editable/datatables.editable.init.js' %}"></script>
+{% endblock %}
