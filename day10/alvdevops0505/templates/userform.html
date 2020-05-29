@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    用户添加
+{% endblock %}
+
+{% block page-content %}
+    <div class="wraper container-fluid">
+                <div class="page-title">
+                    {% if my_path == 'add' %}
+                        <h3 class="title">用户添加</h3>
+                    {% endif %}
+                    {% if my_path == 'update' %}
+                        <h3 class="title">用户更新</h3>
+                    {% endif %}
+                </div>
+
+
+
+{#                {% if UserFormData %}#}
+{#                    {{ UserFormData.errors }}#}
+{#                {% endif %}#}
+                <!-- Form-validation -->
+                <div class="row">
+
+                    <div class="col-sm-5">
+                        <div class="panel panel-default">
+{#                            <div class="panel-heading"><h3 class="panel-title">Form validations</h3></div>#}
+                            <div class="panel-body">
+                                <div class=" form">
+                                    <form class="cmxform form-horizontal tasi-form" id="signupForm" method="post" action="#" novalidate="novalidate">
+                                        <div class="form-group ">
+                                            <label for="username" class="control-label col-lg-2">用户名 *</label>
+                                            <div class="col-lg-5">
+{#                                                <input class="form-control " id="username" name="username" type="text" value="{{ user.username }}">#}
+                                                <input class="form-control " id="username" name="username" type="text" value={% if my_path == 'add' %}{% else %}{{ user.username }}{% endif %}>
+                                                <p style="color: red">{{ UserFormData.errors.username.as_text }} </p>
+                                            </div>
+                                        </div>
+                                        {% if my_path == 'add' %}
+                                        <div class="form-group ">
+                                            <label for="password" class="control-label col-lg-2">密码 *</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control " id="password" name="password" type="password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="confirm_password" class="control-label col-lg-2">确认密码 *</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control " id="confirm_password" name="confirm_password" type="password">
+                                                <p style="color: red">{{ UserFormData.errors.confirm_password.as_text }} </p>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        <div class="form-group ">
+                                            <label for="email" class="control-label col-lg-2">手机号 *</label>
+                                            <div class="col-lg-5">
+                                                <input class="form-control " id="phone" name="phone" type="email" value={% if my_path == 'add' %}{% else %}{{ user.phone }}{% endif %}>
+                                                <p style="color: red">{{ UserFormData.errors.phone.as_text }} </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="email" class="control-label col-lg-2">性别 *</label>
+                                            <div class="col-md-5">
+{#                                                {% if my_path == 'add' %}#}
+                                                <div class="radio-inline">
+                                                    <label class="cr-styled" for="example-radio4">
+                                                        <input type="radio" id="example-radio4" name="sex" value="0" {% if my_path == 'update' %}{% if user.sex == 0 %}checked{% endif %}{% endif %}>
+                                                        <i class="fa"></i>
+                                                        男
+                                                    </label>
+                                                </div>
+                                                <div class="radio-inline">
+                                                    <label class="cr-styled" for="example-radio5">
+                                                        <input type="radio" id="example-radio5" name="sex" value="1" {% if my_path == 'update' %}{% if user.sex == 1 %}checked{% endif %}{% endif %}>
+                                                        <i class="fa"></i>
+                                                        女
+                                                    </label>
+                                                </div>
+{#                                                {% endif %}#}
+{#                                                {% if my_path == 'update' %}#}
+{#                                                    {% if user.sex == 0 %}#}
+{#                                                        <div class="radio-inline">#}
+{#                                                        <label class="cr-styled" for="example-radio4">#}
+{#                                                            <input type="radio" id="example-radio4" name="sex" value="0" checked>#}
+{#                                                            <i class="fa"></i>男#}
+{#                                                        </div>#}
+{#                                                        <div class="radio-inline">#}
+{#                                                        <label class="cr-styled" for="example-radio4">#}
+{#                                                            <input type="radio" id="example-radio4" name="sex" value="1">#}
+{#                                                            <i class="fa"></i>女#}
+{#                                                        </div>#}
+{#                                                    {% else %}#}
+{#                                                        <div class="radio-inline">#}
+{#                                                        <label class="cr-styled" for="example-radio4">#}
+{#                                                            <input type="radio" id="example-radio4" name="sex" value="0">#}
+{#                                                            <i class="fa"></i>男#}
+{#                                                        </div>#}
+{#                                                        <div class="radio-inline">#}
+{#                                                        <label class="cr-styled" for="example-radio4">#}
+{#                                                            <input type="radio" id="example-radio4" name="sex" value="1" checked>#}
+{#                                                            <i class="fa"></i>女#}
+{#                                                        </div>#}
+{#                                                    {% endif %}#}
+{#                                                {% endif %}#}
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-2 col-lg-10">
+                                                <button class="btn btn-success" type="submit">保存</button>
+                                                <a href="{% url 'users:list' %}"><button class="btn btn-default" type="button">取消</button></a>
+{#                                                <button class="btn btn-default" type="button">取消</button>#}
+                                            </div>
+                                        </div>
+                                        {% csrf_token %}
+                                    </form>
+
+                                </div> <!-- .form -->
+
+                            </div> <!-- panel-body -->
+                        </div> <!-- panel -->
+                    </div> <!-- col -->
+
+                </div> <!-- End row -->
+
+
+            </div>
+{% endblock %}

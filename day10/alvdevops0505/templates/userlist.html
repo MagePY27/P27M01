@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    用户列表
+{% endblock %}
+
+{% block css %}
+    <!-- Plugin Css-->
+        <link rel="stylesheet" href="{% static 'assets/magnific-popup/magnific-popup.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/jquery-datatables-editable/datatables.css' %}" />
+{% endblock %}
+
+{% block page-title %}
+    用户列表
+{% endblock %}
+{% block page-content %}
+            <div class="wraper container-fluid">
+
+                <div class="panel">
+
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+{#                                    <button id="addToTable" class="btn btn-primary waves-effect waves-light">添加 <i class="fa fa-plus"></i></button>#}
+                                    <a href="{% url 'users:add' %}">
+                                        <button class="btn btn-primary waves-effect waves-light">添加<i class="fa fa-plus"></i></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped" id="datatable-editable">
+                            <thead>
+                                <tr>
+                                    <th>用户名</th>
+                                    <th>性别</th>
+                                    <th>手机号</th>
+                                    {% if perms.users.change_userprofile %}
+                                    <th>操作</th>
+                                    {% endif %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in all_users %}
+                                <tr class="gradeX">
+                                    <td>{{ user.username }}</td>
+                                    <td>
+                                        {% if user.sex == 0 %}男
+                                        {% elif user.sex == 1 %}女
+                                        {% else %}未填写
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if user.phone == Null%}未填写
+                                        {% else %}{{ user.phone }}
+                                        {% endif %}
+                                    </td>
+                                    {% if perms.users.change_user or perms.users.delete_user %}
+                                    <td class="actions">
+                                        {% if perms.users.change_userprofile %}
+                                        <a href="{% url 'users:update' user.pk %}" class="btn btn-primary btn-xs">编辑</a>
+                                        <a href="{% url 'users:user_group' user.pk %}" class="btn btn-xs btn-success">角色</a>
+                                        <a href="{% url 'users:user_perm_update' user.pk %}" class="btn btn-xs btn-info">权限</a>
+                                        <a href="{% url 'users:reset_password' user.pk %}" class="btn btn-xs btn-warning">重置密码</a>
+                                        {% endif %}
+                                        {% if perms.users.delete_user %}
+                                        <a href="{% url 'users:delete' user.pk %}" class="btn btn-danger btn-xs">删除</a>
+                                        {% endif %}
+{#                                        <a href="{% url 'users:group_add_user' group.id %}" class="btn btn-info btn-xs">添加用户</a>#}
+{#                                        <a href="{% url 'users:group_update' group.id%}" class="btn btn-primary btn-xs">编辑</a>#}
+{#                                        <a href="{% url 'users:group_delete' group.id %}" class="btn btn-danger btn-xs">删除</a>#}
+                                    </td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end: page -->
+
+                </div> <!-- end Panel -->
+
+
+            </div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/modernizr.min.js' %}"></script>
+
+    <script src="{% static 'assets/magnific-popup/magnific-popup.js' %}"></script>
+    <script src="{% static 'assets/jquery-datatables-editable/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'assets/datatables/dataTables.bootstrap.js' %}"></script>
+    <script src="{% static 'assets/jquery-datatables-editable/datatables.editable.init.js' %}"></script>
+
+{% endblock %}

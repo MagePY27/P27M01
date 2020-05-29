@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/jquery-multi-select/multi-select.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/select2/select2.css' %}" />
+{% endblock %}
+{% block title %}
+    为用户添加角色
+{% endblock %}
+{% block page-title %}
+    为用户添加角色
+{% endblock %}
+
+{% block page-content %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><h3 class="panel-title">Multiple Select</h3></div>
+                            <div class="panel-body">
+
+                                <form action="#" class="form-horizontal " method="post">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">现有的权限</label>
+                                            <div class="col-md-9">
+                                            {% for group in groups_on_user %}
+                                                    {{ group.name }}
+                                            {% endfor %}</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">Default</label>
+                                        <div class="col-md-9">
+                                            <select multiple="multiple" class="multi-select" id="my_multi_select1" name="group_name">
+                                                {% for group in all_groups %}
+                                                    <option value="{{ group.id }}">{{ group.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-b-0">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <button type="submit" name="_save" class="btn btn-primary">保存</button>
+                                        <button type="submit" name="_addanother"  class="btn btn-primary">保存并添加另一个</button>
+                                    </div>
+                                        {% csrf_token %}
+                                </form>
+
+                            </div> <!-- panel-body -->
+                        </div> <!-- panel -->
+                    </div> <!-- col -->
+
+                </div> <!-- End row -->
+{% endblock %}
+
+{% block js %}
+        <script src="{% static 'js/jquery.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/pace.min.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nicescroll.js' %}" type="text/javascript"></script>
+
+
+        <script src="{% static 'assets/tagsinput/jquery.tagsinput.min.js' %}"></script>
+        <script src="{% static 'assets/toggles/toggles.min.js' %}"></script>
+        <script src="{% static 'assets/timepicker/bootstrap-timepicker.min.js' %}"></script>
+        <script src="{% static 'assets/timepicker/bootstrap-datepicker.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/colorpicker/bootstrap-colorpicker.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/jquery-multi-select/jquery.multi-select.js' %}"></script>
+        <script type="text/javascript" src="{% static 'assets/jquery-multi-select/jquery.quicksearch.js' %}"></script>
+        <script src="{% static 'assets/bootstrap-inputmask/bootstrap-inputmask.min.js' %}" type="text/javascript"></script>
+        <script type="text/javascript" src="{% static 'assets/spinner/spinner.min.js' %}"></script>
+        <script src="{% static 'assets/select2/select2.min.js' %}" type="text/javascript"></script>
+    <script>
+        jQuery(document).ready(function() {
+
+
+
+                //multiselect start
+
+                $('#my_multi_select1').multiSelect();
+                $('#my_multi_select2').multiSelect({
+                    selectableOptgroup: true
+                });
+
+                $('#my_multi_select3').multiSelect({
+                    selectableHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
+                    selectionHeader: "<input type='text' class='form-control search-input' autocomplete='off' placeholder='search...'>",
+                    afterInit: function (ms) {
+                        var that = this,
+                            $selectableSearch = that.$selectableUl.prev(),
+                            $selectionSearch = that.$selectionUl.prev(),
+                            selectableSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selectable:not(.ms-selected)',
+                            selectionSearchString = '#' + that.$container.attr('id') + ' .ms-elem-selection.ms-selected';
+
+                        that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+                            .on('keydown', function (e) {
+                                if (e.which === 40) {
+                                    that.$selectableUl.focus();
+                                    return false;
+                                }
+                            });
+
+                        that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+                            .on('keydown', function (e) {
+                                if (e.which == 40) {
+                                    that.$selectionUl.focus();
+                                    return false;
+                                }
+                            });
+                    },
+                    afterSelect: function () {
+                        this.qs1.cache();
+                        this.qs2.cache();
+                    },
+                    afterDeselect: function () {
+                        this.qs1.cache();
+                        this.qs2.cache();
+                    }
+                });
+
+            });
+    </script>
+{% endblock %}

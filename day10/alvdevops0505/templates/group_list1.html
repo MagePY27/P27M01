@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <!-- Plugin Css-->
+        <link rel="stylesheet" href="{% static 'assets/magnific-popup/magnific-popup.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/jquery-datatables-editable/datatables.css' %}" />
+{% endblock %}
+
+
+{% block title %}
+    角色列表
+{% endblock %}
+
+{% block page-title %}
+   角色列表
+{% endblock %}
+
+{% block page-content %}
+            <div class="wraper container-fluid">
+
+                <div class="panel">
+
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+{#                                    <button id="addToTable" class="btn btn-primary waves-effect waves-light">添加 <i class="fa fa-plus"></i></button>#}
+                                    <a href="{% url 'users:group_add' %}">
+                                        <button class="btn btn-primary waves-effect waves-light">添加角色<i class="fa fa-plus"></i></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped" id="datatable-editable">
+                            <thead>
+                                <tr>
+                                    <th>组名</th>
+                                    <th>用户</th>
+                                    <th>权限</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for group in all_groups %}
+                                <tr class="gradeX">
+                                    <td>{{ group.name }}</td>
+                                    <td title="{{ group.user_set.all }}">{{ group.user_set.all}}</td>
+                                    <td title="{{ group.permissions.all }}">{{ group.permissions.all}}</td>
+                                    <td class="actions">
+{#                                        <a href="#" class="hidden on-editing save-row"><i class="fa fa-save"></i></a>#}
+{#                                        <a href="#" class="hidden on-editing cancel-row"><i class="fa fa-times"></i></a>#}
+{#                                        <a href="#" class="on-default"><i class="fa fa-pencil"></i></a>#}
+{#                                        <a href="#" class="on-default"><i class="fa fa-trash-o"></i></a>#}
+                                        <a href="{% url 'users:group_add_user' group.id %}" class="btn btn-info btn-xs">添加用户</a>
+                                        <a href="{% url 'users:group_update' group.id%}" class="btn btn-primary btn-xs">编辑</a>
+                                        <a href="{% url 'users:group_delete' group.id %}" class="btn btn-danger btn-xs">删除</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end: page -->
+
+                </div> <!-- end Panel -->
+
+
+            </div>
+{% endblock %}

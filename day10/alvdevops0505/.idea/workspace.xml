@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d77cc03-b085-4c24-9b14-490d25a6f1a8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1bTwc7ds3Q1XXb30U1sGHzSzbUM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/assets" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/cmdb" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/assets" />
+      <recent name="$PROJECT_DIR$/templates/cmdb" />
+      <recent name="$PROJECT_DIR$/cmdb" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/utils" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.alvdevops0505">
+    <configuration name="alisdk_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="alvdevops0505" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/alisdk_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="alvdevops0505" type="Python.DjangoServer" factoryName="Django server">
+      <module name="alvdevops0505" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="alvdevops0505.settings" />
+      </envs>
+      <option name="SDK_HOME" value="sftp://root@39.98.142.171:22/root/envs/venv3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="172.26.27.79" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.alisdk_test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d77cc03-b085-4c24-9b14-490d25a6f1a8" name="Default Changelist" comment="" />
+      <created>1588669467762</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588669467762</updated>
+      <workItem from="1588669470458" duration="22999000" />
+      <workItem from="1588868411140" duration="94937000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="710" y="-840" key="#Options" timestamp="1588671709803">
+      <screen x="-128" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="710" y="-840" key="#Options/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588671709803" />
+    <state x="574" y="-844" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588671201994">
+      <screen x="-128" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="574" y="-844" key="#com.intellij.execution.impl.EditConfigurationsDialog/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588671201994" />
+    <state x="595" y="329" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589619559046">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state x="595" y="329" key="#com.intellij.fileTypes.FileTypeChooser/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1589619559046" />
+    <state x="697" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589556220977">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state x="697" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1589556220977" />
+    <state x="200" y="-911" width="1592" height="811" key="DirDiffDialog" timestamp="1588671610873">
+      <screen x="-128" y="-1057" width="1920" height="1057" />
+    </state>
+    <state x="200" y="-911" width="1592" height="811" key="DirDiffDialog/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588671610873" />
+    <state width="1748" height="376" key="GridCell.Tab.0.bottom" timestamp="1590768546809">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="247" key="GridCell.Tab.0.bottom/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588863554665" />
+    <state width="1748" height="376" key="GridCell.Tab.0.bottom/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590768546809" />
+    <state width="1748" height="376" key="GridCell.Tab.0.center" timestamp="1590768546808">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="247" key="GridCell.Tab.0.center/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588863554665" />
+    <state width="1748" height="376" key="GridCell.Tab.0.center/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590768546808" />
+    <state width="1748" height="376" key="GridCell.Tab.0.left" timestamp="1590768546807">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="247" key="GridCell.Tab.0.left/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588863554664" />
+    <state width="1748" height="376" key="GridCell.Tab.0.left/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590768546807" />
+    <state width="1748" height="376" key="GridCell.Tab.0.right" timestamp="1590768546808">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="247" key="GridCell.Tab.0.right/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588863554665" />
+    <state width="1748" height="376" key="GridCell.Tab.0.right/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590768546808" />
+    <state width="1748" height="308" key="GridCell.Tab.1.bottom" timestamp="1590079024841">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="308" key="GridCell.Tab.1.bottom/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590079024841" />
+    <state width="1748" height="308" key="GridCell.Tab.1.center" timestamp="1590079024841">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="308" key="GridCell.Tab.1.center/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590079024841" />
+    <state width="1748" height="308" key="GridCell.Tab.1.left" timestamp="1590079024841">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="308" key="GridCell.Tab.1.left/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590079024841" />
+    <state width="1748" height="308" key="GridCell.Tab.1.right" timestamp="1590079024841">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state width="1748" height="308" key="GridCell.Tab.1.right/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1590079024841" />
+    <state x="118" y="127" key="SettingsEditor" timestamp="1589899924438">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state x="-2" y="-953" key="SettingsEditor/-128.-1057.1920.1057/0.23.1792.1056@-128.-1057.1920.1057" timestamp="1588670358964" />
+    <state x="118" y="127" key="SettingsEditor/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1589899924438" />
+    <state x="544" y="269" width="703" height="518" key="find.popup" timestamp="1589042062873">
+      <screen x="0" y="23" width="1792" height="1056" />
+    </state>
+    <state x="544" y="269" width="703" height="518" key="find.popup/-128.-1057.1920.1057/0.23.1792.1056@0.23.1792.1056" timestamp="1589042062873" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/alvdevops0505$alisdk_test.coverage" NAME="alisdk_test Coverage Results" MODIFIED="1589623790711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+  </component>
+</project>

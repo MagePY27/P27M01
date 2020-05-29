@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block css %}
+
+{% endblock %}
+{% block title %}
+    标签列表
+{% endblock %}
+{% block page-title %}
+    标签列表
+{% endblock %}
+{% block page-content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">查看标签列表</h3>
+                </div>
+                <div class="panel-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <div class="row" style="margin-bottom: 5px">
+                        {% if perms.cmdb.add_tag %}
+                            <div class="col-md-1"><a href="{% url 'cmdb:tag-add' %}" class="btn btn-primary">添加标签</a></div>
+                        {% endif %}
+                        <div class="col-md-2" style="float: right">
+                            <form class="form-horizontal" role="form">
+                                    <div class="input-group">
+                                        <input type="text" id="keyword" name="keyword" class="form-control"  value="{{ keyword|default_if_none:'' }}" placeholder="关键字">
+                                        <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-effect-ripple btn-primary">搜索</button>
+                                        </span>
+                                    </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>标签名称</th>
+                                        <th>中文名称</th>
+                                        <th>类型</th>
+                                        {% if perms.cmdb.change_tag or perms.cmdb.delete_tag %}
+                                        <th>动作</th>
+                                        {% endif %}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  {% for tag in page_obj.object_list %}
+                                    <tr>
+                                        <td>{{ tag.name }}</td>
+                                        <td>{{ tag.name_cn }}</td>
+                                        <td>{{ tag.type.name_cn }}</td>
+                                        {% if perms.cmdb.change_tag or perms.cmdb.delete_tag %}
+                                        <td>
+                                            {% if perms.cmdb.change_tag %}
+                                                <a href="{% url 'cmdb:add-hosts' tag.id %}" class="btn btn-success btn-xs">添加主机</a>
+{#                                                <a href="" class="btn btn-success btn-xs">添加主机</a>#}
+                                            <a href="{% url 'cmdb:tag-edit' tag.id %}" class="btn btn-primary btn-xs">编辑</a>
+                                            {% endif %}
+                                            {% if perms.cmdb.delete_tag  %}
+                                            <a href="{% url 'cmdb:tag-delete' tag.id %}" class="btn btn-danger btn-xs">删除</a>
+                                            {% endif %}
+                                        </td>
+                                        {% endif %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                           <p style="margin-top: 10px"> 显示 [{{ page_obj.paginator.count }}] 条数据中的 第 [{{ page_obj.start_index }}] 至 [{{ page_obj.end_index }}] 的数据</p>
+                        </div>
+                        <div class="col-md-8">
+                             {% if page_obj.paginator.num_pages > 1 %}
+                                {% include '_paginator.html' %}
+                             {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+        <script>
+        $('.taggit').addClass('active');
+        $('.taggit .tags').addClass('active');
+    </script>
+{% endblock %}

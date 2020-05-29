@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    权限列表
+{% endblock %}
+
+{% block css %}
+    <!-- Plugin Css-->
+        <link rel="stylesheet" href="{% static 'assets/magnific-popup/magnific-popup.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/jquery-datatables-editable/datatables.css' %}" />
+{% endblock %}
+
+{% block page-title %}
+    权限列表
+{% endblock %}
+{% block page-content %}
+            <div class="wraper container-fluid">
+
+                <div class="panel">
+
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="m-b-30">
+{#                                    <button id="addToTable" class="btn btn-primary waves-effect waves-light">添加 <i class="fa fa-plus"></i></button>#}
+                                    <a href="{% url 'users:add' %}">
+                                        <button class="btn btn-primary waves-effect waves-light">添加<i class="fa fa-plus"></i></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-striped" id="datatable-editable">
+                            <thead>
+                                <tr>
+                                    <th>权限名称</th>
+                                    <th>内容类型</th>
+                                    <th>CodeName</th>
+                                    {% if perms.auth.change_permission %}
+                                    <th>操作</th>
+                                    {% endif %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for permission in object_list %}
+                                <tr class="gradeX">
+                                    <td>{{ permission.name }}</td>
+                                    <td>
+                                       {{ permission.content_type }}
+                                    </td>
+                                    <td>
+                                        {{ permission.codename }}
+                                    </td>
+                                    {% if perms.auth.change_permission %}
+                                    <td class="actions">
+                                        <a class="btn btn-primary btn-xs" href="{% url 'users:perm_update' permission.id %}">编辑</a>
+                                    </td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- end: page -->
+
+                </div> <!-- end Panel -->
+
+
+            </div>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/modernizr.min.js' %}"></script>
+
+    <script src="{% static 'assets/magnific-popup/magnific-popup.js' %}"></script>
+    <script src="{% static 'assets/jquery-datatables-editable/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'assets/datatables/dataTables.bootstrap.js' %}"></script>
+    <script src="{% static 'assets/jquery-datatables-editable/datatables.editable.init.js' %}"></script>
+
+    <script type="text/javascript">
+    $('#datatable-editable').dataTable({
+        "aaSorting":[[1,'desc']],
+        "bStateSave":true,
+        "aoColumnDefs":[
+            {"orderable":false, "aTargets":[0,3]}
+        ]
+    });
+    </script>
+{% endblock %}
